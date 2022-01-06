@@ -44,3 +44,12 @@
   padding: 5px;
   font-size: 0.7em;
 }
+
+.ingredients {
+  display: flex;
+  align-items: center;
+}
+
+.ingredients button {
+  margin: 0 0 0 10px;
+}
