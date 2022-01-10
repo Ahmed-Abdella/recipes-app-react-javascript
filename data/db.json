@@ -48,6 +48,25 @@
       "method": "put on fire",
       "cookingTime": "27minutes",
       "id": "VBZ1-uE"
+    },
+    {
+      "title": "bread",
+      "ingredients": [
+        "bread",
+        "water"
+      ],
+      "method": "mix them and put it in the oven",
+      "cookingTime": "29minutes",
+      "id": "IxwUiU5"
+    },
+    {
+      "title": "the last recipe",
+      "ingredients": [
+        "anything"
+      ],
+      "method": "any method",
+      "cookingTime": "6minutes",
+      "id": "AmoMj8-"
     }
   ]
 }

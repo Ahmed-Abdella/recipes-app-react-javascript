@@ -1,11 +1,19 @@
 import "./Recipe.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { useEffect } from "react";
 export default function Recipe() {
   const { id } = useParams();
   console.log(id);
   const url = "http://localhost:3000/recipes/" + id;
   const { data: recipe, error, isPending } = useFetch(url);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => navigate("/"), 2000);
+    }
+  }, [error]);
 
   return (
     <div className="recipe">
