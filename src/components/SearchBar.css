@@ -6,3 +6,9 @@
 .searchbar input {
   margin-left: 10px;
 }
+
+.searchbar.dark input {
+  background-color: #222;
+  color: #fff;
+  caret-color: #fff;
+}

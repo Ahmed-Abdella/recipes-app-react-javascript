@@ -53,3 +53,14 @@
 .ingredients button {
   margin: 0 0 0 10px;
 }
+
+/* dark mode */
+.create.dark {
+  color: #fff;
+}
+
+.create.dark label input,
+.create.dark label textarea {
+  background-color: #222;
+  caret-color: #fff;
+}

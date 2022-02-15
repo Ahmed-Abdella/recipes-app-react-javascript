@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { useTheme } from "../../hooks/useTheme";
 import "./Create.css";
 export default function Create() {
   const [title, setTitle] = useState("");
@@ -17,6 +18,8 @@ export default function Create() {
     "http://localhost:3000/recipes",
     "POST"
   );
+
+  const { mode, color } = useTheme();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +59,7 @@ export default function Create() {
   });
 
   return (
-    <div className="create">
+    <div className={`create ${mode}`}>
       {submited && <h5>your recipe has bee created</h5>}
       <h2 className="page-title">Add a New Recipe</h2>
       <form onSubmit={handleSubmit}>
@@ -79,7 +82,9 @@ export default function Create() {
               value={newIngredient}
               ref={ingredientInput}
             />
-            <button onClick={handleAdd}>add</button>
+            <button onClick={handleAdd} style={{ background: color }}>
+              add
+            </button>
           </div>
         </label>
         <p>
@@ -107,7 +112,9 @@ export default function Create() {
             required
           />
         </label>
-        <button className="btn">submit</button>
+        <button className="btn" style={{ background: color }}>
+          submit
+        </button>
       </form>
     </div>
   );
