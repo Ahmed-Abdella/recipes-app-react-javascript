@@ -15,7 +15,7 @@ export default function Create() {
   const navigate = useNavigate();
 
   const { postData, data, error } = useFetch(
-    "http://localhost:3000/recipes",
+    "https://abdella-recipes-default-rtdb.europe-west1.firebasedatabase.app/recipes.json",
     "POST"
   );
 

@@ -1,0 +1,8 @@
+.dark .page-title,
+.dark .page-error {
+  color: #fff;
+}
+
+.search {
+  padding: 0 24px;
+}

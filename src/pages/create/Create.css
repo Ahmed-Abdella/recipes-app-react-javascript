@@ -63,4 +63,5 @@
 .create.dark label textarea {
   background-color: #222;
   caret-color: #fff;
+  color: #fff;
 }

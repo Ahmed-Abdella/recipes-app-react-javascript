@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useFetch = (url, method = "GET") => {
   const [data, setData] = useState(null);
+  const [dataOne, setDataOne] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
   const [options, setOptions] = useState(null);
@@ -30,7 +31,22 @@ export const useFetch = (url, method = "GET") => {
         if (!res.ok) {
           throw new Error(res.statusText);
         }
-        const data = await res.json();
+        const dataObject = await res.json();
+        setDataOne(dataObject);
+
+        const data = [];
+        for (const key in dataObject) {
+          data.push({
+            id: key,
+            cookingTime: dataObject[key].cookingTime,
+            title: dataObject[key].title,
+            ingredients: dataObject[key].ingredients,
+            method: dataObject[key].method,
+          });
+        }
+
+        console.log(data);
+        console.log(dataObject);
 
         setIsPending(false);
         setData(data);
@@ -58,5 +74,5 @@ export const useFetch = (url, method = "GET") => {
     };
   }, [url, method, options]);
 
-  return { data, isPending, error, postData };
+  return { dataOne, data, isPending, error, postData };
 };

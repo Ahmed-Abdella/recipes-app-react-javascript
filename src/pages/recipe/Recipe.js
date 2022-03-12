@@ -6,8 +6,12 @@ import { useTheme } from "../../hooks/useTheme";
 export default function Recipe() {
   const { id } = useParams();
   console.log(id);
-  const url = "http://localhost:3000/recipes/" + id;
-  const { data: recipe, error, isPending } = useFetch(url);
+  // const url = "http://localhost:3000/recipes/" + id;
+  const url =
+    "https://abdella-recipes-default-rtdb.europe-west1.firebasedatabase.app/recipes/" +
+    id +
+    ".json";
+  const { dataOne: recipe, error, isPending } = useFetch(url);
   const navigate = useNavigate();
   const { mode } = useTheme();
 
