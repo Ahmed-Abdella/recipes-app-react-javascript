@@ -13,7 +13,7 @@ export default function NavBar() {
         <Link to="/" className="brand">
           <h1>recipes</h1>
         </Link>
-        <SearchBar />
+
         <Link to="/create"> Create Recipe</Link>
       </nav>
     </div>

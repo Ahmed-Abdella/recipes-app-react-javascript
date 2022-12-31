@@ -1,6 +1,6 @@
 .recipe {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 10px auto;
   text-align: center;
   background-color: #fff;
   padding: 40px;
@@ -43,4 +43,10 @@
 .recipe.dark .page-title,
 .recipe.dark ul li {
   color: #e6e6e6;
+}
+
+@media screen and (max-width: 800px) {
+  .recipe {
+    font-size: medium;
+  }
 }

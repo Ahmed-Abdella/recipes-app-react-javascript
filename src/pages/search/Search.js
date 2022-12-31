@@ -3,6 +3,8 @@ import { useFetch } from "../../hooks/useFetch";
 import "./Search.css";
 import RecipeList from "../../components/RecipeList";
 import { useTheme } from "../../hooks/useTheme";
+import { useState } from "react";
+import { useEffect } from "react";
 export default function Search() {
   const queryString = useLocation().search;
   const queryParams = new URLSearchParams(queryString);
@@ -10,8 +12,7 @@ export default function Search() {
 
   // const url = "http://localhost:3000/recipes?q=" + query;
   const url =
-    "https://abdella-recipes-default-rtdb.europe-west1.firebasedatabase.app/recipes.json?q=" +
-    query;
+    "https://abdella-recipes-default-rtdb.europe-west1.firebasedatabase.app/recipes.json";
   const { error, isPending, data } = useFetch(url);
   const { mode } = useTheme();
 

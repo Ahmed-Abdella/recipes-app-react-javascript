@@ -1,6 +1,7 @@
 .searchbar form {
   display: flex;
   align-items: center;
+  max-width: 500px;
 }
 
 .searchbar input {
@@ -11,4 +12,17 @@
   background-color: #222;
   color: #fff;
   caret-color: #fff;
+}
+
+.search-button {
+  background: none;
+  background-color: #fff;
+  color: inherit;
+  border: none;
+  padding: 7px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin-left: 4px;
+  border-radius: 4px;
 }

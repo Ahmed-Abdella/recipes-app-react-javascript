@@ -14,12 +14,14 @@ export default function SearchBar() {
   return (
     <div className={`searchbar ${mode}`}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="search">Search:</label>
         <input
           type="text"
           id="search"
+          placeholder="search.."
           onChange={(e) => setTerm(e.target.value)}
         />
+
+        <button className="search-button">search</button>
       </form>
     </div>
   );

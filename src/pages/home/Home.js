@@ -3,6 +3,7 @@ import { useFetch } from "../../hooks/useFetch";
 import RecipeList from "../../components/RecipeList";
 import "./Home.css";
 import { useTheme } from "../../hooks/useTheme";
+import SearchBar from "../../components/SearchBar";
 export default function Home() {
   // const { data, isPending, error } = useFetch("http://localhost:3000/recipes");
   const { data, isPending, error } = useFetch(
@@ -11,6 +12,7 @@ export default function Home() {
   const { mode } = useTheme();
   return (
     <div className={`home ${mode}`}>
+      <SearchBar />
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading ">laoding.....</p>}
       {data && <RecipeList recipes={data} />}

@@ -4,6 +4,7 @@
   grid-gap: 40px;
   max-width: 1200px;
   margin: 40px auto;
+  padding-bottom: 20px;
 }
 
 .recipe_list .card {
@@ -60,4 +61,24 @@
 .recipe_list .card.dark h3,
 .recipe_list .card.dark div {
   color: #e4e4e4;
+}
+
+@media screen and (max-width: 1000px) {
+  .recipe_list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  html {
+    font-size: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .recipe_list {
+    grid-template-columns: 1fr;
+  }
+
+  html {
+    font-size: 85%;
+  }
 }
